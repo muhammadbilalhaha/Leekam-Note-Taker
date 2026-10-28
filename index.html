@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="Leekam is a calm, responsive note-taking app that keeps every note in your browser." />
+    <meta name="theme-color" content="#17352b" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Leekam — Notes, kept close</title>
+    <script>
+      try {
+        const saved = localStorage.getItem("leekam.theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.dataset.theme = saved || (prefersDark ? "dark" : "light");
+      } catch {
+        document.documentElement.dataset.theme = "light";
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
